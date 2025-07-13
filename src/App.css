@@ -1,0 +1,247 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form input widths */
+#username, #password {
+  width: 95%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Main container styling */
+.app-container,
+.results-page {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.results-page {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Fade-out state */
+.app-container.fade-out,
+.results-page.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Heading styling */
+h1 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Form styling */
+.scraper-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Input styling */
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #833ab4;
+  box-shadow: 0 0 8px rgba(131,58,180,0.3);
+  outline: none;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #833ab4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #6e2a9a;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Results content */
+.results-content {
+  margin-top: 1rem;
+}
+
+/* Lists container */
+.lists-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lists-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* List sections */
+
+.list-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-y: auto;
+  max-height: 400px;
+  min-width: 350px;
+  margin-bottom: 1.5rem; /* Added more space below each list box */
+}
+
+.list-section h3 {
+  margin-top: 0;
+  color: #833ab4;
+}
+
+.list-section a {
+  color: #385185; /* Instagram-like blue color */
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.list-section a:hover {
+  color: #00376b; /* Darker blue on hover */
+  text-decoration: underline;
+}
+
+/* Remove default li padding since we're putting it on the anchor */
+.list-section li {
+  padding: 0;
+}
+
+/* Keep the border bottom on the list item */
+.list-section li {
+  border-bottom: 1px solid #eee;
+}
+
+/* List items */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  color: #333; /* Dark gray instead of white */
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* Special buttons */
+.toggle-button {
+  background-color: #28a745;
+}
+
+.reset-button {
+  background-color: #007BFF;
+  margin-top: 1rem;
+}
+
+/* Error message */
+.error {
+  color: red;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .lists-container {
+    flex-direction: column;
+  }
+}
+
+/* Scrollbar styling */
+.lists-container::-webkit-scrollbar,
+.list-section::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.lists-container::-webkit-scrollbar-track,
+.list-section::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 6px;
+}
+
+.lists-container::-webkit-scrollbar-thumb,
+.list-section::-webkit-scrollbar-thumb {
+  background: #833ab4;
+  border-radius: 6px;
+  border: 2px solid #f0f0f0;
+}
+
+.lists-container::-webkit-scrollbar-thumb:hover,
+.list-section::-webkit-scrollbar-thumb:hover {
+  background: #6e2a9a;
+}
+
+/* Button hover states */
+.toggle-button:hover {
+  background-color: #218838;
+}
+
+.reset-button:hover {
+  background-color: #0056b3;
+}
